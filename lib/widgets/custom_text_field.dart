@@ -7,9 +7,8 @@ final String hintText;
 final int maxLines;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextField(
+    return 
+      TextField(
         maxLines: maxLines,
         cursorColor: KPrimaryColor,
         decoration:InputDecoration(
@@ -18,8 +17,7 @@ final int maxLines;
           border: buildBorder(),
           focusedBorder: buildBorder(KPrimaryColor),
         ),
-      ),
-    );
+      );
   }
 
   OutlineInputBorder buildBorder([color]) {
