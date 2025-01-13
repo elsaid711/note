@@ -10,12 +10,12 @@ final int maxLines;
     return 
       TextField(
         maxLines: maxLines,
-        cursorColor: KPrimaryColor,
+        cursorColor: kPrimaryColor,
         decoration:InputDecoration(
           hintText:hintText ,
           hintStyle: const TextStyle(color: Colors.green),
           border: buildBorder(),
-          focusedBorder: buildBorder(KPrimaryColor),
+          focusedBorder: buildBorder(kPrimaryColor),
         ),
       );
   }

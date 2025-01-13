@@ -12,7 +12,7 @@ class CustomButtomSheet extends StatelessWidget {
       child: Center(child: Text('Add Note',style: TextStyle(color: Colors.black,fontSize: 16,fontFamily: 'MyFont'),)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: KPrimaryColor,
+        color: kPrimaryColor,
       ),
     );
   }
