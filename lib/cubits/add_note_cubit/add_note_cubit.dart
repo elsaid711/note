@@ -8,19 +8,17 @@ import '../../model/note_model.dart';
 part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
-  AddNoteCubit() : super(AddNoteInitial());
+  final Box<NoteModel> notesBox; // تمرير الصندوق بدلًا من فتحه داخل الدالة
 
-  addnote(NoteModel note) async {
+  AddNoteCubit(this.notesBox) : super(AddNoteInitial());
+
+  void addnote(NoteModel note) async {
+    emit(AddNoteLoading());
     try {
-      var notesBox = Hive.box<NoteModel>(kNotesBox);
+      await notesBox.add(note); // إضافة الملاحظة إلى الصندوق المفتوح مسبقًا
       emit(AddNoteSuccess());
-      await notesBox.add(note);
     } catch (e) {
-      emit(
-        AddNoteFailure(
-          e.toString(),
-        ),
-      );
+      emit(AddNoteFailure(e.toString()));
     }
   }
 }
