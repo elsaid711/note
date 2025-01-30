@@ -13,7 +13,7 @@ class noteItem extends StatelessWidget {
         },));
       },
       child: Container(
-        padding: EdgeInsets.only(top: 10,bottom: 10),
+        padding: EdgeInsets.only(top: 12,bottom: 12),
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),

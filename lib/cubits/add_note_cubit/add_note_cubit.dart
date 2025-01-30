@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meta/meta.dart';
-
-import '../../constains.dart';
 import '../../model/note_model.dart';
 
 part 'add_note_state.dart';

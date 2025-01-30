@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note/cubits/add_note_cubit/add_note_cubit.dart';
 import 'add_note_form.dart';
 
 class AddNoteButtomSheet extends StatelessWidget {
- const  AddNoteButtomSheet({super.key});
-
-
+  const AddNoteButtomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +21,16 @@ class AddNoteButtomSheet extends StatelessWidget {
           if (state is AddNoteSuccess) {
             Navigator.pop(context);
           }
-         
+
           // TODO: implement listener
         },
         builder: (context, state) {
-          return ModalProgressHUD(
-          inAsyncCall: state is AddNoteLoading ? true : false,  
-          child:SingleChildScrollView(child: const AddNoteForm()));
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
+            child: SingleChildScrollView(
+              child: const AddNoteForm(),
+            ),
+          );
         },
       ),
     );
