@@ -44,4 +44,3 @@ class noteItem extends StatelessWidget {
 
   }
 }
-
